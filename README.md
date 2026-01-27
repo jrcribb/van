@@ -161,6 +161,7 @@ Contact us: [@taoxin](https://twitter.com/intent/follow?region=follow_link&scree
 | [P5.wrapper](https://github.com/zakarialaoui10/p5.wrapper) | A p5.js wrapper for **VanJS** built on top of ZikoJS	| [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
 | [Van-Mdx](https://github.com/zakarialaoui10/van-mdx) | A Markdown preprocessor for **VanJS** | [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
 | [Van-Server](https://github.com/zakarialaoui10/van-server) | Server-side rendering for **VanJS** with file-based routing and client-side hydration | [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
+| [Ufbr](https://github.com/zakarialaoui10/ufbr) | Universal client side file based routing for **VanJS** and others | [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
 
 ## Contributors (68)
 

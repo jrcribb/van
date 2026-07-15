@@ -366,6 +366,50 @@
         await Promise.resolve();
         assertEq(dom.outerHTML, "<p>Text</p>");
       }),
+      tags_propSetterCache_nonHtmlNamespace: () => {
+        a({ href: "https://vanjs.org/" });
+        const { a: svgA } = van2.tags("http://www.w3.org/2000/svg");
+        assertEq(svgA({ href: "#icon" }).getAttribute("href"), "#icon");
+      },
+      tags_propSetterCache_autonomousCustomElement: () => {
+        const tagName = "my-element-" + window.numTests;
+        const customTag = van2.tags[tagName];
+        customTag({ customValue: "before registration" });
+        class MyElement extends HTMLElement {
+          constructor() {
+            super(...arguments);
+            this._customValue = "";
+          }
+          get customValue() {
+            return this._customValue;
+          }
+          set customValue(value) {
+            this._customValue = value;
+          }
+        }
+        customElements.define(tagName, MyElement);
+        const dom = customTag({ customValue: "after registration" });
+        assertEq(dom.customValue, "after registration");
+      },
+      tags_propSetterCache_customizedBuiltIn: () => {
+        button({ customValue: "ordinary button" });
+        class MyButton extends HTMLButtonElement {
+          constructor() {
+            super(...arguments);
+            this._customValue = "";
+          }
+          get customValue() {
+            return this._customValue;
+          }
+          set customValue(value) {
+            this._customValue = value;
+          }
+        }
+        const tagName = "my-button-" + window.numTests;
+        customElements.define(tagName, MyButton, { extends: "button" });
+        const dom = button({ is: tagName, customValue: "customized button" });
+        assertEq(dom.customValue, "customized button");
+      },
       tags_svg: () => {
         const { circle, path: path2, svg } = van2.tags("http://www.w3.org/2000/svg");
         const dom = svg({ width: "16px", viewBox: "0 0 50 50" }, circle({ cx: "25", cy: "25", "r": "20", stroke: "black", "stroke-width": "2", fill: "yellow" }), circle({ cx: "16", cy: "20", "r": "2", stroke: "black", "stroke-width": "2", fill: "black" }), circle({ cx: "34", cy: "20", "r": "2", stroke: "black", "stroke-width": "2", fill: "black" }), path2({ "d": "M 15 30 Q 25 40, 35 30", stroke: "black", "stroke-width": "2", fill: "transparent" }));

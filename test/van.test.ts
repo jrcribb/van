@@ -495,6 +495,45 @@ const runTests = async (van: VanForTesting, msgDom: Element, {debug}: BundleOpti
       assertEq(dom.outerHTML, "<p>Text</p>")
     }),
 
+    tags_propSetterCache_nonHtmlNamespace: () => {
+      a({href: "https://vanjs.org/"})
+      const {a: svgA} = van.tags("http://www.w3.org/2000/svg")
+      assertEq(svgA({href: "#icon"}).getAttribute("href"), "#icon")
+    },
+
+    tags_propSetterCache_autonomousCustomElement: () => {
+      const tagName = "my-element-" + window.numTests
+      const customTag = van.tags[tagName]
+      customTag({customValue: "before registration"})
+
+      class MyElement extends HTMLElement {
+        private _customValue = ""
+
+        get customValue() { return this._customValue }
+        set customValue(value) { this._customValue = value }
+      }
+      customElements.define(tagName, MyElement)
+
+      const dom = <MyElement>customTag({customValue: "after registration"})
+      assertEq(dom.customValue, "after registration")
+    },
+
+    tags_propSetterCache_customizedBuiltIn: () => {
+      button({customValue: "ordinary button"})
+
+      class MyButton extends HTMLButtonElement {
+        private _customValue = ""
+
+        get customValue() { return this._customValue }
+        set customValue(value) { this._customValue = value }
+      }
+      const tagName = "my-button-" + window.numTests
+      customElements.define(tagName, MyButton, {extends: "button"})
+
+      const dom = <MyButton><unknown>button({is: tagName, customValue: "customized button"})
+      assertEq(dom.customValue, "customized button")
+    },
+
     tags_svg: () => {
       const {circle, path, svg} = van.tags("http://www.w3.org/2000/svg")
       const dom = svg({width: "16px", viewBox: "0 0 50 50"},

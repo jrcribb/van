@@ -99,8 +99,9 @@ let tag = (ns, name, ...args) => {
     let getPropDescriptor = proto => proto ?
       Object.getOwnPropertyDescriptor(proto, k) ?? getPropDescriptor(protoOf(proto)) :
       _undefined
-    let cacheKey = name + "," + k
-    let propSetter = propSetterCache[cacheKey] ??= getPropDescriptor(protoOf(dom))?.set ?? 0
+    let propSetter = !ns && !is && !name.includes("-") ?
+      propSetterCache[name + "," + k] ??= getPropDescriptor(protoOf(dom))?.set ?? 0 :
+      getPropDescriptor(protoOf(dom))?.set
     let setter = k.startsWith("on") ?
       (v, oldV) => {
         let event = k.slice(2)

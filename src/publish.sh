@@ -14,7 +14,7 @@ npx esbuild van.forbundle.js --bundle --outfile=../public/van-$VER.nomodule.js
 npx esbuild van.forbundle.debug.js --bundle --outfile=../public/van-$VER.nomodule.debug.js
 
 npx terser van.js --compress --toplevel --mangle --mangle-props regex=/^_.+/ -f wrap_func_args=false -o ../public/van-$VER.min.js
-gzip -kf ../public/van-$VER.min.js
+gzip -9nkf ../public/van-$VER.min.js
 cp van.d.ts ../public/van-$VER.min.d.ts
 MIN_NOMODULE=$(npx terser ../public/van-$VER.nomodule.js --compress --toplevel --mangle --mangle-props regex=/^_.+/ -f wrap_func_args=false)
 echo -n "{let${MIN_NOMODULE:3}}" > ../public/van-$VER.nomodule.min.js

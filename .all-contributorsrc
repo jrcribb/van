@@ -657,6 +657,18 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "codex",
+      "name": "Codex",
+      "avatar_url": "https://avatars.githubusercontent.com/u/267193182?v=4",
+      "profile": "https://github.com/codex",
+      "contributions": [
+        "bug",
+        "code",
+        "test",
+        "ideas"
+      ]
     }
   ],
   "repoType": "github"

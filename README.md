@@ -164,7 +164,7 @@ Contact us: [@taoxin](https://twitter.com/intent/follow?region=follow_link&scree
 | [Ufbr](https://github.com/zakarialaoui10/ufbr) | Universal client side file based routing for **VanJS** and others | [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
 | [Van I18n](https://github.com/zakarialaoui10/van-i18n) | Reactive i18n provider for **VanJS** apps | [Zakaria Elalaoui](https://github.com/zakarialaoui10) |
 
-## Contributors (68)
+## Contributors (69)
 
 *If I miss anyone's contribution here, apologies for my oversight 🙏, please comment on [#87](https://github.com/vanjs-org/van/issues/87) to let me know.*
 
@@ -262,6 +262,7 @@ Contact us: [@taoxin](https://twitter.com/intent/follow?region=follow_link&scree
       <td align="center" valign="top" width="14.28%"><a href="https://binhtran432k.com"><img src="https://avatars.githubusercontent.com/u/26183671?v=4?s=100" width="100px;" alt="Binh Tran"/><br /><sub><b>Binh Tran</b></sub></a><br /><a href="#ideas-binhtran432k" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/vanjs-org/van/commits?author=binhtran432k" title="Code">💻</a> <a href="#plugin-binhtran432k" title="Plugin/utility libraries">🔌</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://torbjorn.tyridal.no"><img src="https://avatars.githubusercontent.com/u/7912255?v=4?s=100" width="100px;" alt="Torbjorn Tyridal"/><br /><sub><b>Torbjorn Tyridal</b></sub></a><br /><a href="#ideas-ttyridal" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://cubxx.github.io/blog/"><img src="https://avatars.githubusercontent.com/u/109600351?v=4?s=100" width="100px;" alt="cubxx"/><br /><sub><b>cubxx</b></sub></a><br /><a href="#ideas-cubxx" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/codex"><img src="https://avatars.githubusercontent.com/u/267193182?v=4?s=100" width="100px;" alt="Codex"/><br /><sub><b>Codex</b></sub></a><br /><a href="https://github.com/vanjs-org/van/issues?q=author%3Acodex" title="Bug reports">🐛</a> <a href="https://github.com/vanjs-org/van/commits?author=codex" title="Code">💻</a> <a href="https://github.com/vanjs-org/van/commits?author=codex" title="Tests">⚠️</a> <a href="#ideas-codex" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>

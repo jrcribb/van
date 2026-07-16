@@ -41,6 +41,9 @@
     "terser": "^5.22.0",
     "typescript": "^5.1.6"
   },
+  "overrides": {
+    "tmp": "^0.2.7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vanjs-org/van.git"
